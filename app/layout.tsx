@@ -1,31 +1,23 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter } from "next/font/google";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap"
-});
-
-const space = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space",
-  display: "swap"
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Revenue Signal Repair",
+  title: "Meta Revenue Signal Audit | 10K Sprint",
   description:
-    "Revenue signal reconciliation and Meta optimization signal infrastructure for Shopify brands."
+    "We audit and repair Shopify–Meta revenue signals so your ad account optimizes for real buyers again.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" className={`${inter.variable} ${space.variable}`}>
-      <body className="min-h-screen text-textPrimary antialiased">
-        {children}
-      </body>
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
